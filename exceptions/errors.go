@@ -12,12 +12,19 @@ type ErrorType struct {
 }
 
 type Error struct {
-	Message string `json:"message"`
+	Messages []string `json:"messages"`
 	ErrorType
 }
 
-func (e Error) Error() string {
-	return e.Message
+func (e Error) Error() (message string) {
+	l := len(e.Messages)
+	for i, m := range e.Messages {
+		message += m
+		if l > 1 && l > i {
+			message += " ; "
+		}
+	}
+	return message
 }
 
 func (e Error) ToJSON() ([]byte, error) {
