@@ -1,3 +1,3 @@
-module github.com/GabiHert/pesquisai-errors-lib
+module github.com/PesquisAi/pesquisai-errors-lib
 
 go 1.22.1
