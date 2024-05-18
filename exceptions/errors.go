@@ -8,6 +8,8 @@ import (
 type ErrorType struct {
 	Code           string `json:"code"`
 	Type           string `json:"type"`
+	Abort          bool   `json:"abort"`
+	Notify         bool   `json:"notify"`
 	HttpStatusCode int    `json:"-"`
 }
 
