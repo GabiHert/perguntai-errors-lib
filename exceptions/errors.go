@@ -6,16 +6,16 @@ import (
 )
 
 type ErrorType struct {
-	Code           string         `json:"code"`
-	Type           string         `json:"type"`
-	Forward        map[string]any `json:"forward,omitempty"`
-	Abort          bool           `json:"abort"`
-	Notify         bool           `json:"notify"`
-	HttpStatusCode int            `json:"-"`
+	Code           string `json:"code"`
+	Type           string `json:"type"`
+	Abort          bool   `json:"abort"`
+	Notify         bool   `json:"notify"`
+	HttpStatusCode int    `json:"-"`
 }
 
 type Error struct {
-	Messages []string `json:"messages"`
+	Messages []string       `json:"messages"`
+	Forward  map[string]any `json:"forward,omitempty"`
 	ErrorType
 }
 
